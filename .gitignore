@@ -1,0 +1,42 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Dependency directories (remove the comment below if you want to check in your vendor directory)
+# vendor/
+
+# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
+.glide/
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Go build cache
+build/
+
+# Configuration files that may contain sensitive information
+*.conf
+*.yaml
+*.yml
+*.toml
+*.env
+*.ini
+
+# Logs
+logs/
+*.log
+
+# VSCode
+.vscode/
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+Desktop.ini
