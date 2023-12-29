@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  sms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"  # Maps port 9000 of the host to port 9000 of the container
+    volumes:
+      - .:/app  # Mounts the current directory to /app in the container
+    restart: always  # Container will always restart
+    depends_on:
+      - mysql-service  # Ensures mysql-service starts before sms service
+
+  mysql-service:
+    image: mysql:8.0.29  # Using a specific version for consistency
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # Environment variables for MySQL
+      MYSQL_DATABASE: sms
+    ports:
+      - "3306:3306"  # Maps port 3306 of the host to port 3306 of the container
+    volumes:
+      - mysql-data:/var/lib/mysql  # Persists MySQL data
+    command: --default-authentication-plugin=mysql_native_password  # Sets the default auth plugin
+    restart: always  # Container will always restart
+
+volumes:
+  mysql-data:  # Defines the volume for MySQL persistence

@@ -21,7 +21,6 @@ build/
 
 # Configuration files that may contain sensitive information
 *.conf
-*.yaml
 *.yml
 *.toml
 *.env
@@ -40,3 +39,5 @@ logs/
 # Windows specific
 Thumbs.db
 Desktop.ini
+
+# Docker files

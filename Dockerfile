@@ -7,17 +7,15 @@ WORKDIR /app
 COPY . /app
 
 # Download dependencies
-RUN go mod download
+RUN go mod download    
 
 COPY src/ src/
 
 WORKDIR /app/src/cmd
 
-# Build project
-RUN go build -o main .
-
 # Expose port in main.go
 EXPOSE 9000
 
+
+CMD ["go", "run", "main.go"]
 # Run executable
-CMD ["./main"]
