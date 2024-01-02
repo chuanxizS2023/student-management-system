@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-  sms:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "9000:9000"  # Maps port 9000 of the host to port 9000 of the container
-    volumes:
-      - .:/app  # Mounts the current directory to /app in the container
-    restart: always  # Container will always restart
-    depends_on:
-      - mysql-service  # Ensures mysql-service starts before sms service
+  # sms:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "9000:9000"  # Maps port 9000 of the host to port 9000 of the container
+  #   volumes:
+  #     - .:/app  # Mounts the current directory to /app in the container
+  #   restart: always  # Container will always restart
+  #   depends_on:
+  #     - mysql-service  # Ensures mysql-service starts before sms service
 
   mysql-service:
     image: mysql:8.0.29  # Using a specific version for consistency
