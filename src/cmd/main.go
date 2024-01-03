@@ -27,5 +27,5 @@ func main() {
 	})
 	api.UserRoutes(r)
 
-	r.Run(":9000")
+	r.Run(":9090")
 }
