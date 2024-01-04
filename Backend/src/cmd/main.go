@@ -26,6 +26,7 @@ func main() {
 		})
 	})
 	api.UserRoutes(r)
+	api.StudentRoutes(r)
 
 	r.Run(":9090")
 }
